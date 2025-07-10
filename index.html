@@ -1,237 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customer Service - Help Center</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Customer Service</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f4f4f4;
-        }
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #04208F; /* Dark blue text */
+      background-color: #ffffff; /* White background */
+    }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
 
-        header {
-            background-color: #2c3e50;
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-            margin-bottom: 2rem;
-        }
+    header {
+      background-color: #04208F; /* Dark blue header */
+      color: white;
+      padding: 2rem 0;
+    }
 
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-        .subtitle {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
 
-        .content-section {
-            background-color: white;
-            margin-bottom: 2rem;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
+    .talk-to-us {
+      background-color: white; /* Bright blue button */
+      color: #04208F;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
 
-        h2 {
-            color: #2c3e50;
-            margin-bottom: 1rem;
-            font-size: 1.8rem;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 0.5rem;
-        }
+    .talk-to-us:hover {
+      background-color: #04208F; /* Darker on hover */
+    }
 
-        h3 {
-            color: #34495e;
-            margin-bottom: 0.8rem;
-            margin-top: 1.5rem;
-            font-size: 1.3rem;
-        }
+    main {
+      padding: 2rem 0;
+    }
 
-        p {
-            margin-bottom: 1rem;
-            text-align: justify;
-        }
+    .hero {
+      background: #ffffff; /* White hero background */
+      padding: 2rem;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+      text-align: center;
+      border: 2px solid #04208F;
+    }
 
-        .faq-item {
-            margin-bottom: 1.5rem;
-            padding: 1rem;
-            background-color: #f8f9fa;
-            border-left: 4px solid #3498db;
-        }
+    .hero h1 {
+      color: #04208F;
+      margin-bottom: 1rem;
+      font-size: 2rem;
+    }
 
-        .faq-question {
-            font-weight: bold;
-            color: #2c3e50;
-            margin-bottom: 0.5rem;
-        }
+    .hero p {
+      font-size: 1.1rem;
+      color: #04208F;
+    }
 
-        .policy-highlight {
-            background-color: #e8f4f8;
-            padding: 1rem;
-            border-radius: 5px;
-            margin: 1rem 0;
-            border-left: 4px solid #3498db;
-        }
+    .services {
+      background: #ffffff;
+      padding: 2rem;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+      border: 2px solid #04208F;
+    }
 
-        .steps {
-            counter-reset: step-counter;
-        }
+    .services h2 {
+      color: #04208F;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
 
-        .step {
-            counter-increment: step-counter;
-            margin-bottom: 1rem;
-            padding: 1rem;
-            background-color: #f8f9fa;
-            border-radius: 5px;
-            position: relative;
-            padding-left: 3rem;
-        }
+    .service-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
 
-        .step::before {
-            content: counter(step-counter);
-            position: absolute;
-            left: 1rem;
-            top: 1rem;
-            background-color: #3498db;
-            color: white;
-            width: 1.5rem;
-            height: 1.5rem;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 0.9rem;
-        }
+    .service-item {
+      text-align: center;
+      padding: 1rem;
+      border: 1px solid #04208F;
+      border-radius: 5px;
+    }
 
-        .warning {
-            background-color: #fff3cd;
-            color: #856404;
-            padding: 1rem;
-            border-radius: 5px;
-            border-left: 4px solid #ffc107;
-            margin: 1rem 0;
-        }
+    .service-item h3 {
+      color: #04208F;
+      margin-bottom: 0.5rem;
+    }
 
-        .footer {
-            background-color: #34495e;
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-            margin-top: 3rem;
-        }
-    </style>
+    .service-item p {
+      color: #04208F;
+      font-size: 0.9rem;
+    }
+
+    .commitment {
+      background: #ffffff;
+      padding: 2rem;
+      border-radius: 8px;
+      text-align: center;
+      border: 2px solid #04208F;
+    }
+
+    .commitment h2 {
+      color: #04208F;
+      margin-bottom: 1rem;
+    }
+
+    .commitment p {
+      color: #04208F;
+    }
+
+    footer {
+      background-color: #04208F;
+      color: white;
+      text-align: center;
+      padding: 1rem 0;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .header-content {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .logo {
+        font-size: 1.3rem;
+      }
+
+      .hero h1 {
+        font-size: 1.5rem;
+      }
+
+      .service-list {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Customer Service</h1>
-        <p class="subtitle" style="text-align: center;">We're here to help you with all your questions and concerns</p>
-    </header>
-
+  <header>
     <div class="container">
-        <div class="content-section">
-            <h2>Frequently Asked Questions</h2>
-            
-            <div class="faq-item">
-                <div class="faq-question">How can I track my order?</div>
-                <p>Once your order is shipped, you will receive a tracking number via email. You can use this number to track your package on our website or the carrier's website. Orders typically take 3-7 business days to arrive.</p>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">What is your return policy?</div>
-                <p>We accept returns within 30 days of purchase. Items must be in original condition with tags attached. Return shipping is free for defective items, while customer returns may incur a small shipping fee.</p>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">How do I cancel my order?</div>
-                <p>Orders can be cancelled within 24 hours of placement. After this time, the order may have already been processed for shipping. Please check your order status in your account dashboard.</p>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">Do you offer international shipping?</div>
-                <p>Yes, we ship to most countries worldwide. International shipping costs and delivery times vary by location. Additional customs fees may apply depending on your country's regulations.</p>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">How can I update my account information?</div>
-                <p>You can update your account information by logging into your account dashboard. From there, you can change your address, payment methods, and personal details.</p>
-            </div>
-        </div>
-
-        <div class="content-section">
-            <h2>Return & Exchange Process</h2>
-            
-            <div class="steps">
-                <div class="step">
-                    <strong>Check Eligibility:</strong> Ensure your item is within the 30-day return window and meets our return conditions.
-                </div>
-                <div class="step">
-                    <strong>Initiate Return:</strong> Log into your account and select the order you wish to return. Choose the items and reason for return.
-                </div>
-                <div class="step">
-                    <strong>Print Return Label:</strong> Download and print the prepaid return shipping label provided.
-                </div>
-                <div class="step">
-                    <strong>Package Items:</strong> Securely package the items in their original packaging with all tags and accessories.
-                </div>
-                <div class="step">
-                    <strong>Ship Back:</strong> Attach the return label and drop off at any authorized shipping location.
-                </div>
-                <div class="step">
-                    <strong>Receive Refund:</strong> Once we receive and inspect your return, your refund will be processed within 5-7 business days.
-                </div>
-            </div>
-
-            <!-- <div class="warning">
-                <strong>Important:</strong> Items that are damaged, worn, or missing original packaging may not be eligible for return. Custom or personalized items are final sale.
-            </div> -->
-        </div>
-
-        <div class="content-section">
-            <h2>Order Issues & Resolution</h2>
-            
-            <h3>Damaged or Defective Items</h3>
-            <p>If you receive a damaged or defective item, please report any issues within 7 days of receiving your order. We'll need your order number and photos of the damaged item to process your replacement quickly.</p>
-
-            <h3>Wrong Item or Missing Items</h3>
-            <p>If you received the wrong item or have missing items, we'll send you the correct items and provide a prepaid return label if needed. Please check your order confirmation email first to verify what was ordered.</p>
-        </div>
-
-        <div class="content-section">
-            <h2>Account & Payment Support</h2>
-            
-            <h3>Account Access Problems</h3>
-            <p>If you're having trouble accessing your account, try resetting your password using the "Forgot Password" link. Make sure you're using the correct email address associated with your account.</p>
-
-            <h3>Payment Issues</h3>
-            <p>We accept all major credit cards, PayPal, and digital wallets. If your payment is declined, please check with your bank. Ensure your billing address matches the address on file with your bank.</p>
-
-            <!-- <div class="policy-highlight">
-                <strong>Security Notice:</strong> All transactions are processed securely through encrypted payment gateways.
-            </div> -->
-        </div>
+      <div class="header-content">
+        <div class="logo">Customer Service</div>
+        <a href="tel:+1-833-319-6348" class="talk-to-us">Talk to us: +1-833-319-6348</a>
+      </div>
     </div>
+  </header>
 
-    <div class="footer" style="text-align: center;">
-        <p  style="text-align: center;">&copy; 2024 Customer Service Center. We're committed to providing excellent service and support.</p>
+  <main>
+    <div class="container">
+      <section class="hero">
+        <h1> Customer Service</h1>
+        <p>We're here to help you with excellent service and support.</p>
+      </section>
+
+      <section class="services">
+        <h2>How We Help</h2>
+        <div class="service-list">
+          <div class="service-item">
+            <h3>Product Support</h3>
+            <p>Get help with installation, setup, and troubleshooting for all our products.</p>
+          </div>
+          <div class="service-item">
+            <h3>Technical Help</h3>
+            <p>Our technical team provides solutions for any technical issues you encounter.</p>
+          </div>
+          <div class="service-item">
+            <h3>Account Services</h3>
+            <p>Manage your account information and make changes to your services.</p>
+          </div>
+          <div class="service-item">
+            <h3>Training Resources</h3>
+            <p>Access guides and tutorials to get the most out of our products.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="commitment">
+        <h2>Our Promise</h2>
+        <p>Customer satisfaction is our priority. We provide reliable, friendly service and work hard to exceed your expectations. Your success is important to us.</p>
+      </section>
     </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2024. All rights reserved.</p>
+    </div>
+  </footer>
 </body>
 </html>
